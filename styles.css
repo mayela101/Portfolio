@@ -93,13 +93,57 @@ body {
     padding: 80px 0;
 }
 
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateY(-5px);
+}
+
 .project-card {
-background: #FFB6C1;
-background: radial-gradient(circle, rgba(255, 182, 193, 1) 5%, rgba(255, 255, 255, 1) 30%);
+    position: relative;
+    background: #FFB6C1;
+    background: radial-gradient(circle, rgba(255, 182, 193, 1) 5%, rgba(255, 255, 255, 1) 30%);
     border-radius: 20px;
     padding: 60px;
     margin-bottom: 60px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    min-height: 450px;
+    overflow: visible;
+}
+
+
+.project-card2 {
+    position: relative;
+    background: #6085B3;
+    background: radial-gradient(circle,rgba(96, 133, 179, 1) 2%, rgba(255, 255, 255, 1) 30%);
+    border-radius: 20px;
+    padding: 60px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    min-height: 450px;
+    overflow: visible;
+}
+
+.project-card3 {
+    position: relative;
+    background: #f2a03d;
+    background: radial-gradient(circle, rgba(242, 160, 61, 1) 0%, rgba(255, 255, 255, 1) 30%);
+    border-radius: 20px;
+    padding: 60px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    min-height: 450px;
+    overflow: visible;
+}
+
+.project-content {
+    position: relative;
+    z-index: 2;
 }
 
 .project-tag {
@@ -108,7 +152,7 @@ background: radial-gradient(circle, rgba(255, 182, 193, 1) 5%, rgba(255, 255, 25
     border: 1.5px solid #333;
     border-radius: 25px;
     font-size: 14px;
-    margin-bottom: 25px;
+    margin-bottom:2px;
     color: #333;
 }
 
@@ -118,6 +162,7 @@ background: radial-gradient(circle, rgba(255, 182, 193, 1) 5%, rgba(255, 255, 25
     margin-bottom: -10px;
     color: #1a1a1a;
 }
+
 .project-title1 {
     font-size: 32px;
     font-weight: 600;
@@ -128,9 +173,44 @@ background: radial-gradient(circle, rgba(255, 182, 193, 1) 5%, rgba(255, 255, 25
 .project-description {
     font-size: 16px;
     line-height: 1.8;
-    color: #555;
+    color: #000000;
     max-width: 600px;
     margin-bottom: 40px;
+}
+
+/* Device Mockup Positioning */
+.project-mockup {
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    max-width: 400px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.project-mockup2 {
+    position: absolute;
+    right: 40px;
+    bottom: -10px;
+    max-width: 300px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.project-mockup3 {
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    max-width: 400px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.device-mockup {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
 }
 
 .project-image {
@@ -191,6 +271,13 @@ background: radial-gradient(circle, rgba(255, 182, 193, 1) 5%, rgba(255, 255, 25
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .project-mockup {
+        max-width: 400px;
+        right: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
@@ -214,10 +301,20 @@ background: radial-gradient(circle, rgba(255, 182, 193, 1) 5%, rgba(255, 255, 25
 
     .project-card {
         padding: 30px;
+        min-height: auto;
+        padding-bottom: 280px;
     }
 
     .project-title {
         font-size: 24px;
+    }
+
+    .project-mockup {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 20px;
+        max-width: 90%;
     }
 
     .contact-email {
