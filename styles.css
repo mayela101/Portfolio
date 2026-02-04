@@ -224,7 +224,7 @@ section {
 .tag-small {
     background-color: #e8f4fd;
     color: var(--primary-color);
-    padding: 6px 14px;
+    padding: 6px 15px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
@@ -255,6 +255,7 @@ section {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* Project image container - displays images or fallback text for placeholders */
 .project-image {
     width: 100%;
     height: 220px;
@@ -420,10 +421,6 @@ section {
 
     .contact-links {
         gap: 2rem;
-    }
-
-    .skill-tags {
-        justify-content: center;
     }
 }
 
