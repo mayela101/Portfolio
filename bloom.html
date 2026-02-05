@@ -11,7 +11,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Mayela</a></div>
+            <div class="logo"><a href="index.html" class="logo-link">Mayela</a></div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">About</a></li>
@@ -19,21 +19,30 @@
         </div>
     </nav>
 
-    <!-- Project Hero -->
-    <section class="project-hero bloom-hero">
-        <div class="container">
-            <a href="index.html" class="back-link">← Back to Portfolio</a>
-            <h1 class="project-hero-title">AI-Powered Journaling Companion</h1>
-            <h2 class="project-hero-subtitle">| Bloom</h2>
-            <p class="project-hero-description">
-                Designed a private, AI assisted journaling experience that helps people start 
-                writing faster and notice emotional patterns over time. Combined guided prompts, 
-                gentle analysis, and visual progress cues to build a supportive daily habit.
-            </p>
+<!-- Project Hero -->
+<section class="project-hero bloom-hero">
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        <h1 class="project-hero-title">AI-Powered Journaling Companion</h1>
+        <h2 class="project-hero-subtitle">| Bloom</h2>
+        <p class="project-hero-description">
+            Designed a private, AI assisted journaling experience that helps people start 
+            writing faster and notice emotional patterns over time. Combined guided prompts, 
+            gentle analysis, and visual progress cues to build a supportive daily habit.
+        </p>
+        
+        <!-- Project Links -->
+        <div class="project-links">
+            <a href="https://bloom-flame.vercel.app/" target="_blank" class="project-tag-link">
+                Live Site →
+            </a>
+            <a href="https://github.com/mayela101/Bloom" target="_blank" class="project-tag-link">
+                Check out the code
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Project Details -->
     <section class="project-details">
         <div class="container">
             <div class="detail-grid">
@@ -73,53 +82,48 @@
     <section class="project-content">
         <div class="container">
 
+            <!-- Problem Statement with Interactive Journal Entry -->
             <div class="content-section">
                 <h2>Problem Statement</h2>
-                <p>While journaling is widely recognized as a powerful tool for improving mental wellness, 
-                    many individuals struggle to maintain a consistent practice. Common challenges include 
-                    blank-page anxiety, uncertainty about what to write, and difficulty reflecting on past 
-                    entries to identify meaningful emotional patterns over time.
-                </p>
-                <p>
-                    <br>
-                    As a result, journaling often becomes a passive log of daily events rather than an active tool for growth.
-                </p>
-                <p>
-                    <br>
-                    Bloom was designed to address these challenges by creating a private, empathetic journaling companion that encourages consistency, 
-                    and transforms journaling into a fun and rewarding reflective habit.
-                </p>
-                <p>
-                    <br>
-                    Target Users
-                    <ul>
-                    <li>Individuals focused on mental wellness and self-reflection</li>
-                    <li>People new to journaling who need structure and encouragement</li>
-                    <li>Busy professionals seeking a quick, effective way to process their day</li>     
-                    </ul>    
-                </p>
+                
+                <!-- Journal Entry Mockup with Overlay Text -->
+                <div class="journal-mockup-container">
+                    <img src="interactive1.png" alt="Bloom Journal Interface" class="journal-bg">
+                    
+                    <!-- Overlay Text Area (mimics the text input in your screenshot) -->
+                    <div class="journal-text-overlay">
+                        <p class="typewriter" id="problem-text">
+While journaling is widely recognized as beneficial for mental wellness, many struggle to maintain consistency. Common challenges include blank-page anxiety, uncertainty about what to write, and difficulty identifying emotional patterns over time.
+
+Bloom addresses these challenges by creating a private, empathetic companion that encourages consistency and transforms journaling into a rewarding reflective habit.</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="content-section">
-                <h2>Solution</h2>
-                <p>
-                    Bloom is an AI-assisted journaling application that combines:
-                    <p>
-                    <ul>
-                    <li>Guided, context-aware prompts</li>
-                    <li>Lightweight emotional analysis</li>
-                    <li>Visual progress metaphors</li>
-                    </ul>
-                    </p>
-
-                    <p>
-                    The system is intentionally designed so that AI supports the user without thinking for them or criticizing their actions.
-                    </p>
-                    <p> 
-                    Insights are reflective rather than prescriptive, and progress is framed as personal growth rather than performance or comparison.
-                    </p>
-                </p>
-            </div>
+<!-- Solution with Interactive Journal Entry -->
+<div class="content-section">
+    <h2>Solution</h2>
+    
+    <div class="journal-mockup-container">
+        <img src="bloom-journal-solution.png" alt="Bloom Journal Interface" class="journal-bg">
+        
+        <div class="journal-text-overlay-top">
+            <p class="typewriter" id="solution-intro">
+Bloom is an AI-assisted journaling application that combines:
+• Guided, context-aware prompts
+• Lightweight emotional analysis
+• Visual progress metaphors
+            </p>
+        </div>
+        
+        <div class="journal-text-overlay-bottom">
+            <p class="typewriter" id="solution-details">
+The system is intentionally designed so that AI supports the user without thinking for them or criticizing their actions. Insights are reflective rather than prescriptive, and progress is framed as personal growth rather than performance or comparison.
+            </p>
+        </div>
+    </div>
+</div>
 
             <div class="content-section">
                 <h2>Core Features</h2>
@@ -132,21 +136,73 @@
                 </ul>
             </div>
 
-            <div class="content-section">
-                <h2>Initial Sketches</h2>
-            </div>
+<div class="content-section">
+    <h2>Initial Sketches</h2>
+</div>
 
-            <div class="sketches">
-                <img src="bloom-sketch1.png" alt="Bloom Sketch 1" class="sketch-img">
-                <img src="bloom-sketch2.png" alt="Bloom Sketch 2" class="sketch-img">
-            </div>
+<div class="sketches">
+    <div class="sketch-wrapper">
+        <img src="bloom-sketch1.png" alt="Bloom Sketch 1" class="sketch-img">
+        <div class="zoom-icon">🔍</div>
+    </div>
+    <div class="sketch-wrapper">
+        <img src="bloom-sketch2.png" alt="Bloom Sketch 2" class="sketch-img">
+        <div class="zoom-icon">🔍</div>
+    </div>
+</div>
 
-            <div class="image-showcase">
-                <img src="sample3.png" alt="Bloom App Screenshot" class="showcase-img">
-            </div>
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Enlarged sketch view">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<div class="content-section">
+    <h2>Final Product</h2>
+    <p>Explore key features of the Bloom journaling experience</p>
+</div>
+
+<!-- Screenshot Gallery -->
+<div class="screenshot-gallery">
+    <div class="screenshot-item">
+        <img src="bloom-screenshot-1.png" alt="Bloom Dashboard">
+    </div>
+    <div class="screenshot-item">
+        <img src="bloom-screenshot-2.png" alt="Bloom Journal Entry">
+    </div>
+    <div class="screenshot-item">
+        <img src="bloom-screenshot-3.png" alt="Bloom Insights">
+    </div>
+
+        <div class="screenshot-item">
+        <img src="bloom-screenshot-4.png" alt="Bloom Dashboard">
+    </div>
+    <div class="screenshot-item">
+        <img src="bloom-screenshot-5.png" alt="Bloom Journal Entry">
+    </div>
+    <div class="screenshot-item">
+        <img src="bloom-screenshot-6.png" alt="Bloom Insights">
+    </div>
+</div>
+
+        <!-- Project Links -->
+        <div class="project-links">
+            <a href="https://bloom-flame.vercel.app/" target="_blank" class="project-tag-link">
+                Live Site →
+            </a>
+            <a href="https://github.com/mayela101/Bloom" target="_blank" class="project-tag-link">
+                Check out the code
+            </a>
         </div>
+        </div>
+
+        
     </section>
 
+    
+
+    
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -157,5 +213,6 @@
     </section>
 
     <script src="script.js"></script>
+    <script src="bloom-typewriter.js"></script>
 </body>
 </html>
