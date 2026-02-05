@@ -32,3 +32,32 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Typing animation for hero title
+document.addEventListener('DOMContentLoaded', () => {
+    const heroTitle = document.getElementById('hero-typing');
+    
+    if (heroTitle) {
+        const text = "Hi, I'm Mayela!";
+        let index = 0;
+        
+        // Clear the text first
+        heroTitle.textContent = '';
+        
+        function typeWriter() {
+            if (index < text.length) {
+                heroTitle.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // Adjust speed here (lower = faster)
+            } else {
+                // Remove cursor after typing is done
+                setTimeout(() => {
+                    heroTitle.classList.add('typing-done');
+                }, 4000); // Wait half a second before removing cursor
+            }
+        }
+        
+        // Start typing after a brief delay
+        setTimeout(typeWriter, 300);
+    }
+});
