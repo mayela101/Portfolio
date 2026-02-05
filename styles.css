@@ -227,7 +227,7 @@ body {
     position: relative;
     background: #6085B3;
     background: radial-gradient(circle,rgba(96, 133, 179, 1) 2%, rgba(255, 255, 255, 1) 30%);
-    border-radius: 20px;
+    border-radius: 25px;
     padding: 60px;
     margin-bottom: 60px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -239,7 +239,7 @@ body {
     position: relative;
     background: #ba81f7;
     background: radial-gradient(circle, rgba(186, 129, 247, 1) 0%, rgba(255, 255, 255, 1) 30%);
-    border-radius: 20px;
+    border-radius: 25px;
     padding: 60px;
     margin-bottom: 60px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
