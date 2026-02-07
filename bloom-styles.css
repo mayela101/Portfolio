@@ -413,7 +413,8 @@
     }
     
     .journal-text-overlay {
-        display: none;
+        top: 60%;
+        font-size: 14px;
     }
 
     .journal-text-overlay p {
