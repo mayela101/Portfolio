@@ -417,7 +417,7 @@
     }
 
     .journal-text-overlay p {
-        display: none;
+        font-size: 14px;
     }
 }
 /* Add this to your existing bloom-styles.css */
