@@ -405,13 +405,45 @@
         max-width: 100%;
     }
 
-    .journal-text-overlay {
-        top: 60%;
-        font-size: 14px;
+    /* Hide journal mockup images on mobile */
+    .journal-mockup-container .journal-bg {
+        display: none;
     }
 
-    .journal-text-overlay p {
+    /* Show text overlays as regular static text on mobile */
+    .journal-text-overlay,
+    .journal-text-overlay-top,
+    .journal-text-overlay-bottom {
+        position: static;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+    .journal-text-overlay p,
+    .journal-text-overlay-top p,
+    .journal-text-overlay-bottom p {
+        font-size: 16px;
+        color: #555;
+    }
+
+    /* Remove typewriter animation on mobile */
+    .typewriter.typing::after {
+        display: none;
+    }
+
+    .screenshot-gallery {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .screenshot-caption {
         font-size: 14px;
+        padding: 15px;
+    }
+    
+    .live-demo-btn {
+        padding: 14px 35px;
+        font-size: 16px;
     }
 }
 /* Add this to your existing bloom-styles.css */
