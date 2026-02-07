@@ -411,22 +411,13 @@
     .journal-mockup-container {
         display: none;
     }
-        /* Show mobile static text on mobile */
-    .mobile-static-text {
-        display: block;
-        font-size: 16px;
-        line-height: 1.8;
-        color: #555;
-        margin: 20px 0;
-    }
-
+    
     .journal-text-overlay {
-        top: 60%;
-        font-size: 14px;
+        display: none;
     }
 
     .journal-text-overlay p {
-        font-size: 14px;
+        display: none;
     }
 }
 /* Add this to your existing bloom-styles.css */
