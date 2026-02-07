@@ -68,10 +68,9 @@ body {
 
 /* Hero Section - Updated with Image Layout */
 .hero {
-    padding: 180px 0 120px;
+    padding: 180px 0 60px; /* Changed from 120px to 60px bottom padding */
     min-height: 60vh;
 }
-
 /* Flexbox layout for text + image */
 .hero-content {
     display: flex;
@@ -189,15 +188,85 @@ body {
     max-width: 700px;
 }
 
+/* Add this new style for hero email */
+.hero-email {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0 10px 0;
+}
+
+.hero-email svg {
+    flex-shrink: 0;
+}
+
+/* Update content-section to reduce bottom margin */
+.content-section {
+    margin-bottom: 40px; /* Changed from 60px */
+}
+
+/* Update the last content section specifically */
+.content-section:last-of-type {
+    margin-bottom: 0px; /* Even less space before footer */
+}
+
+/* Mobile responsive for hero email */
+@media (max-width: 768px) {
+    .hero-email {
+        justify-content: center;
+    }
+}
+.content-section {
+    margin-bottom: 60px;
+}
+
 .content-section h2 {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 600;
     margin-bottom: 20px;
     color: #1a1a1a;
 }
+
+.content-section h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.content-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+}
+
+.content-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-section ul li {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.content-section ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #69402b;
+    font-weight: bold;
+}
 /* Projects Section */
 .projects {
-    padding: 80px 0;
+    padding: 40px 0 80px; /* Changed from 80px 0 to reduce top padding */
 }
 
 .project-link {
@@ -376,6 +445,56 @@ body {
     color: #333;
 }
 
+/* Contact Section - Left Aligned */
+.contact {
+    padding: 100px 0 80px;
+    text-align: left;
+}
+
+/* Contact Heading */
+.contact-heading {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+/* Email styling */
+.contact p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact p svg {
+    flex-shrink: 0;
+}
+
+/* Footer Navigation - Left Aligned */
+.footer-nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.footer-nav-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    color: #333;
+}
+
 /* Social Links - Left Aligned */
 .social-links {
     display: flex;
@@ -445,7 +564,7 @@ body {
     }
 
     .hero {
-        padding: 120px 0 80px;
+        padding: 120px 0 40px; /* Changed from 80px to 40px bottom padding */
     }
 
     .hero-title {
@@ -456,22 +575,27 @@ body {
         font-size: 16px;
     }
 
-    .project-card {
+    /* Hide project descriptions and mockups on mobile */
+    .project-description {
+        display: none;
+    }
+    
+    .project-mockup,
+    .project-mockup2,
+    .project-mockup3 {
+        display: none;
+    }
+
+    .project-card,
+    .project-card2,
+    .project-card3 {
         padding: 30px;
         min-height: auto;
-        padding-bottom: 280px;
+        padding-bottom: 30px; /* Changed from 280px since no image */
     }
 
     .project-title {
         font-size: 24px;
-    }
-
-    .project-mockup {
-        position: absolute;
-        right: 50%;
-        transform: translateX(50%);
-        bottom: 20px;
-        max-width: 90%;
     }
     
     /* Footer responsive - Centers on mobile */
@@ -481,6 +605,10 @@ body {
     
     .contact-heading {
         font-size: 20px;
+    }
+    
+    .contact p {
+        justify-content: center;
     }
     
     .footer-nav {
@@ -512,6 +640,11 @@ body {
     .mockup-container {
         padding: 20px;
     }
+    
+    .reads-bites-container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 /* Smooth Scrolling */
@@ -523,4 +656,34 @@ html {
 ::selection {
     background-color: rgba(230, 200, 255, 0.3);
     color: #1a1a1a;
+}
+
+.reads-bites-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 1;
+}
+
+.column h4 {
+    margin-bottom: 10px;
+}
+
+.column ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.column li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .reads-bites-container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
