@@ -542,13 +542,7 @@ body {
     color: #ff6b6b;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .project-mockup {
-        max-width: 400px;
-        right: 30px;
-    }
-}
+
 
 @media (max-width: 768px) {
     .container {
@@ -580,7 +574,7 @@ body {
         display: none;
     }
     
-    .project-mockup,
+  .project-mockup,
     .project-mockup2,
     .project-mockup3 {
         display: none;
