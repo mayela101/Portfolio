@@ -198,20 +198,24 @@
 .screenshot-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 10px;
+    align-items: start;
+    gap: 30px;
     margin: 40px 0 60px;
     max-width: 1200px;
 }
 
 .screenshot-item {
-    /* background: white;  ← REMOVE THIS LINE */
+    background: transparent;
+    border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .screenshot-item:hover {
     transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .screenshot-item img {

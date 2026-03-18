@@ -146,6 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const screenshotItems = document.querySelectorAll('.screenshot-item');
     
     screenshotItems.forEach(item => {
+        if (item.classList.contains('no-lightbox')) {
+            return;
+        }
+
         item.addEventListener('click', function() {
             const img = this.querySelector('img');
             
