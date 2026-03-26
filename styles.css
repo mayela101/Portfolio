@@ -327,7 +327,17 @@ body {
     min-height: 450px;
     overflow: visible;
 }
-
+.project-card5 {
+    position: relative;
+background: #7BA2ED;
+background: radial-gradient(circle, rgba(123, 162, 237, 1) 0%, rgba(255, 255, 255, 1) 32%);
+    border-radius: 25px;
+    padding: 60px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    min-height: 450px;
+    overflow: visible;
+}
 .project-content {
     position: relative;
     z-index: 2;
@@ -398,6 +408,14 @@ body {
     right: 10px;
     bottom: 50px;
     max-width: 400px;
+    z-index: 1;
+    pointer-events: none;
+}
+.project-mockup6 {
+    position: absolute;
+    right: 45px;
+    bottom: 100px;
+    max-width: 360px;
     z-index: 1;
     pointer-events: none;
 }
@@ -599,7 +617,8 @@ body {
     .project-mockup2,
     .project-mockup3,
     .project-mockup4,
-    .project-mockup5 {
+    .project-mockup5,
+    .project-mockup6 {
         display: none;
     }
 
@@ -607,7 +626,8 @@ body {
     .project-card,
     .project-card2,
     .project-card3,
-    .project-card4 {
+    .project-card4,
+    .project-card5 {
         padding: 30px;
         min-height: auto;
         padding-bottom: 30px; /* Changed from 280px since no image */

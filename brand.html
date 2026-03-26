@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avian | Mayela</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="brand-style.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="index.html" class="logo-link">Mayela</a></div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero avian-hero">
+<div class="container">
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+            <h1 class="project-hero-title">AI Feature Concept for Canva</h1>
+            <h2 class="project-hero-subtitle">| Brand Guardian</h2>
+            <p class="project-hero-description">
+    A bilayer AI enforcement system for Canva Teams that catches brand violations 
+    before publish and resolves reviewer feedback inline, closing the gap between 
+    brand guidelines that exist and brand consistency that doesn't.
+            </p>
+            <div class="project-links">
+                                <a href="https://brand-buddy-ai-nu.vercel.app/" target="_blank" class="project-tag-link">
+                    Interactive Demo
+                </a>
+                <a href="https://canva.link/tzwpzki9kyn5w13" target="_blank" class="project-tag-link">
+                    Pitch Deck
+                </a>
+            </div>
+        </div>
+    </section>
+
+<section class="project-details">
+    <div class="container">
+        <div class="detail-grid">
+            <div class="detail-item">
+                <h3>Role</h3>
+                <p>Product Manager</p>
+            </div>
+
+            <div class="detail-item">
+                <h3>Tools</h3>
+                <p>Lovable, Claude, Figma, Vercel</p>
+            </div>
+            <div class="detail-item">
+                <h3>Deliverables</h3>
+                <p>Live Prototype, Pitch Deck, Ship Plan</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+
+            <div class="content-section">
+                <h2>Problem Statement</h2>
+                <p>85% of companies have brand guidelines but two thirds say they aren't enforced. Canva's Brand Kit 
+                    is reference-only — teammates can ignore it, bypass suggestions, and publish off-brand with zero friction. 
+                    Hard enforcement is paywalled behind Enterprise. Teams customers have no safety net.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Solution</h2>
+                <p>Brand Guardian is a bilayer AI system built directly into the Canva editor. The proactive layer watches 
+                    as you design and catches violations before review. The reactive layer translates natural language 
+                    reviewer comments into exact inline fixes with one-click apply. Together they close the loop between 
+                    brand guidelines and brand reality.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Core Features</h2>
+                <ul>
+                    <li>AI auto-populates brand kit from uploaded PDF, no manual entry</li>
+                    <li>Color intelligence that evaluates unknown colors using color theory, not just hex matching</li>
+                    <li>Tonal drift detection, catches designs that are spec-compliant but still feel off-brand</li>
+                    <li>Natural language comment resolution mapped to specific design properties</li>
+                    <li>Learns from every accept/override, building a living model of your brand over time</li>
+                </ul>
+            </div>
+
+                        <div class="content-section">
+                <h2>AI Workflow</h2>
+                <p>Built using an AI-native development process — problem framing with Claude, prototype scaffolded with 
+                    Lovable, deployed to Vercel. Claude served as a copilot throughout component wiring, interaction design, 
+                    and iteration based on feedback.</p>
+            </div>
+
+            <div class="content-section">
+    <h2>Initial Prototype Sketches</h2>
+</div>
+            <!-- Screenshot Gallery -->
+<div class="screenshot-gallery">
+    <div class="screenshot-item">
+        <img src="mockup-brand.jpg" alt="Home Page Figma">
+    </div>
+    <div class="screenshot-item">
+        <img src="mockup-brand-1.jpg" alt="Menu Page Figma">
+    </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Enlarged sketch view">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<div class="content-section">
+    <h2>Success Metrics</h2>
+    <table class="metrics-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>What it Measures</th>
+                <th>Why it Matters</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Brand Kit Compliance Rate</td>
+                <td>% of published designs with zero violations</td>
+                <td>North Star: did the problem get solved</td>
+            </tr>
+            <tr>
+                <td>Autofix Acceptance Rate</td>
+                <td>% of AI suggestions accepted vs dismissed</td>
+                <td>Is the AI accurate enough to be trusted</td>
+            </tr>
+            <tr>
+                <td>Revision Cycle Time</td>
+                <td>Time from comment posted to resolved</td>
+                <td>Is layer 2 actually reducing back and forth</td>
+            </tr>
+            <tr>
+                <td>Time-To-Publish</td>
+                <td>Design start to publish, Guardian on vs off</td>
+                <td>Productivity proxy, quantifies the ROI</td>
+            </tr>
+            <tr>
+                <td>Brand Guardian Setup Rate</td>
+                <td>% of workspaces with kit fully configured</td>
+                <td>Is onboarding working, is the feature even active</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="content-section">
+    <h2>Ship Plan</h2>
+    <div class="ship-plan">
+        <div class="phase">
+            <h3>Phase 1 · Weeks 0–3</h3>
+            <h4>Core Guardian</h4>
+            <ul>
+                <li>Color + font violation detection, inline flag UI, autofix suggestions</li>
+                <li>Internal alpha with Canva's own marketing team</li>
+                <li>Teams: ML/AI Eng, Design, Brand Kit Infra, PM</li>
+            </ul>
+        </div>
+        <div class="phase">
+            <h3>Phase 2 · Weeks 3–8</h3>
+            <h4>Comment Resolution + Coverage Expansion</h4>
+            <ul>
+                <li>Ship AI Comment Resolution — the reactive layer</li>
+                <li>Expand Guardian: logo usage, spacing, tonal drift, confidence thresholds</li>
+                <li>Closed beta with 10–15 Teams/Enterprise customers</li>
+                <li>Teams: Eng, Design, Data, Customer Success</li>
+            </ul>
+        </div>
+        <div class="phase">
+            <h3>Phase 3 · Weeks 8–14</h3>
+            <h4>GA + Learning Loop</h4>
+            <ul>
+                <li>Full rollout with per-org AI personalization</li>
+                <li>Brand manager compliance dashboard</li>
+                <li>Teams: All + Legal (audit trail, AI transparency)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>Final Product</h2>
+</div>
+
+<!-- Screenshot Gallery -->
+<div class="screenshot-gallery">
+    <div class="screenshot-item">
+        <img src="brand-final.png" alt="Brand Guardian Landing Page">
+    </div>
+        <div class="screenshot-item">
+        <img src="brand-final-1.png" alt="Brand Guardian Feature Page">
+    </div>
+            <div class="screenshot-item">
+        <img src="brand-final-2.png" alt="Brand Guardian Feature Page">
+    </div>
+</div>
+
+
+            <div class="project-links">
+                <a href="https://brand-buddy-ai-nu.vercel.app/" target="_blank" class="project-tag-link">
+                    Interactive Demo
+                </a>
+                                <a href="https://canva.link/tzwpzki9kyn5w13" target="_blank" class="project-tag-link">
+                    Pitch Deck
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <!-- Contact Heading -->
+        
+        <!-- Navigation Links -->
+        <div class="footer-nav">
+            <a href="index.html" class="footer-nav-link">Home</a>
+            <a href="index.html#projects" class="footer-nav-link">Projects</a>
+        </div>
+        
+        <!-- Social Links -->
+        <h3 class="contact-heading">Contact Me</h3>
+        <p>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+                </svg>
+                connect.mayela@gmail.com
+        </p>
+        <div class="social-links">
+
+            <a href="https://linkedin.com/in/mayelaa" target="_blank" class="social-link" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/mayela101" target="_blank" class="social-link" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </div>
+        
+        <p class="footer-credit">Made by Mayela <3</p>
+    </div>
+</section>
+
+    <script src="script.js"></script>
+    <script src="bloom-typewriter.js"></script>
+</body>
+</html>
