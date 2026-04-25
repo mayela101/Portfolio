@@ -18,6 +18,32 @@ body {
     padding: 0 40px;
 }
 
+/* Social icon buttons */
+.social-btn,
+.social-btn:link,
+.social-btn:visited {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid #333;
+    color: #333;
+    background: transparent;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover,
+.social-btn:focus-visible {
+    background: #69402b;
+    border-color: #754c38;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(138, 69, 48, 0.3);
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
