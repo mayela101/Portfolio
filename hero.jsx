@@ -49,16 +49,16 @@ function Nav() {
   const navStyle = {
     position: 'sticky', top: 0, zIndex: 50,
     background: 'rgba(245,240,237,0.92)', backdropFilter: 'blur(10px)',
-    padding: '18px 0', borderBottom: '1px solid rgba(0,0,0,0.04)',
+    padding: '18px 0',
   };
   return (
     <nav style={navStyle}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ fontFamily: 'var(--font-serif)', fontSize: 22, fontWeight: 600, color: 'var(--fg-display)' }}>Mayela</div>
+        <div><img src="mayela-name.png" alt="Mayela" style={{ height: 42, width: 'auto', display: 'block' }} /></div>
         <ul style={{ display: 'flex', gap: 40, listStyle: 'none', margin: 0, padding: 0 }}>
-          <li><a href="#home" style={{ color: 'var(--fg-meta)', fontSize: 17 }}>Home</a></li>
-          <li><a href="#projects" style={{ color: 'var(--fg-meta)', fontSize: 17 }}>Projects</a></li>
-          <li><a href="#experience" style={{ color: 'var(--fg-meta)', fontSize: 17 }}>Experience</a></li>
+          <li><a href="#home" style={{ color: 'var(--fg-meta)', fontSize: 17, textDecoration: 'none' }}>Home</a></li>
+          <li><a href="#projects" style={{ color: 'var(--fg-meta)', fontSize: 17, textDecoration: 'none' }}>Projects</a></li>
+          <li><a href="#experience" style={{ color: 'var(--fg-meta)', fontSize: 17, textDecoration: 'none' }}>Experience</a></li>
         </ul>
       </div>
     </nav>
@@ -66,8 +66,28 @@ function Nav() {
 }
 
 function Hero() {
-  const [typed, done] = useTypewriter("Hi I'm Mayela!", 75, 400);
   const [showCopyMessage, setShowCopyMessage] = React.useState(false);
+
+  // ── Per-letter tuning ───────────────────────────────────────────────
+  // anim:   which direction the letter enters from
+  // height: size of the letter image (increase = bigger, decrease = smaller)
+  // nudge:  marginRight in px — negative pulls the NEXT letter closer
+  // delay:  animationDelay offset in seconds (on top of the stagger)
+  const nameLetters = [
+    // ── M ──
+    { src: 'M.png',   alt: 'M', anim: 'letterFromLeft',    height: 'clamp(45px, 5vw, 52px)',   nudge: -7  },
+    // ── a ──
+    { src: 'a.png',   alt: 'a', anim: 'letterFromTop',     height: 'clamp(45px, 5vw, 52px)',   nudge: -18 },
+    // ── y  (nudge pulls e closer too if needed) ──
+    { src: 'y.png',   alt: 'y', anim: 'letterFromRight',   height: 'clamp(48px, 5.6vw, 58px)', nudge: 3  },
+    // ── e ──
+    { src: 'e.png',   alt: 'e', anim: 'letterFromBottom',  height: 'clamp(42px, 4.3vw, 45px)', nudge: 3  },
+    // ── l ──
+    { src: 'l.png',   alt: 'l', anim: 'letterFromTopLeft', height: 'clamp(55px, 6vw, 55px)',   nudge: 3  },
+    // ── a (second) ──
+    { src: 'a-2.png', alt: 'a', anim: 'letterFromRight',   height: 'clamp(45px, 5vw, 52px)',   nudge: 0  },
+  ];
+  // ────────────────────────────────────────────────────────────────────
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('connect.mayela@gmail.com').then(() => {
@@ -77,7 +97,7 @@ function Hero() {
   };
 
   return (
-    <section id="home" style={{ padding: '130px 0 70px', position: 'relative', overflow: 'hidden' }}>
+    <section id="home" style={{ padding: '130px 0 70px', position: 'relative' }}>
       <div className="container" style={{ position: 'relative' }}>
         <div style={{
           display: 'grid',
@@ -96,16 +116,32 @@ function Hero() {
               color: 'var(--fg-display)',
               lineHeight: 1.05,
               margin: '0 0 45px 0',
-              whiteSpace: 'nowrap',
+              display: 'flex',
+              alignItems: 'center',
+              flexWrap: 'nowrap',
+              gap: 10,
             }}>
-              {typed}
-              <span style={{
-                display: 'inline-block', width: 3, height: '0.9em',
-                background: 'var(--fg-display)', marginLeft: 3,
-                verticalAlign: '-0.05em',
-                animation: done ? 'none' : 'blink 0.75s step-end infinite',
-                opacity: done ? 0 : 1,
-              }} />
+              <span style={{ whiteSpace: 'nowrap' }}>Hi I'm</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 0 }}>
+                {nameLetters.map(({ src, alt, anim, height, nudge }, i) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={alt}
+                    style={{
+                      height,                 /* ← per-letter size */
+                      width: 'auto',
+                      display: 'block',
+                      marginRight: nudge,     /* ← per-letter spacing */
+                      /* steps(2,end) = 2 discrete jumps, true stop-motion */
+                      /* duration 0.7s → each frame holds for 0.35s       */
+                      /* stagger 0.75s > duration = fully sequential       */
+                      animation: `${anim} 0.7s steps(2, end) both`,
+                      animationDelay: `${0.1 + i * 0.75}s`,
+                    }}
+                  />
+                ))}
+              </span>
             </h1>
 
             {/* Index card bundle — its own "project card" */}
@@ -284,6 +320,33 @@ function Hero() {
 
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        /* 3-frame stop-motion per letter: scattered → clustering → final */
+        /* steps(2,end) = discrete jumps, no smooth interpolation        */
+        @keyframes letterFromLeft {
+          0%   { transform: translate(-160px, -30px) rotate(-28deg); }
+          50%  { transform: translate(-65px,  -12px) rotate(-12deg); }
+          100% { transform: none; }
+        }
+        @keyframes letterFromTop {
+          0%   { transform: translate(60px, -110px) rotate(22deg); }
+          50%  { transform: translate(25px,  -45px) rotate(10deg); }
+          100% { transform: none; }
+        }
+        @keyframes letterFromRight {
+          0%   { transform: translate(180px,  35px) rotate(-20deg); }
+          50%  { transform: translate(75px,   14px) rotate(-9deg);  }
+          100% { transform: none; }
+        }
+        @keyframes letterFromBottom {
+          0%   { transform: translate(-50px, 100px) rotate(18deg); }
+          50%  { transform: translate(-20px,  42px) rotate(8deg);  }
+          100% { transform: none; }
+        }
+        @keyframes letterFromTopLeft {
+          0%   { transform: translate(-110px, -80px) rotate(-25deg); }
+          50%  { transform: translate(-46px,  -33px) rotate(-11deg); }
+          100% { transform: none; }
+        }
         @keyframes slideOut {
           0% { 
             opacity: 0;

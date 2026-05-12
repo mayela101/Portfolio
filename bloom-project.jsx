@@ -4,13 +4,13 @@ function Nav() {
   const navStyle = {
     position: 'sticky', top: 0, zIndex: 50,
     background: 'rgba(245,240,237,0.92)', backdropFilter: 'blur(10px)',
-    padding: '18px 0', borderBottom: '1px solid rgba(0,0,0,0.04)',
+    padding: '18px 0',
   };
   return (
     <nav style={navStyle}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ fontFamily: 'var(--font-serif)', fontSize: 22, fontWeight: 600, color: 'var(--fg-display)' }}>
-          <a href="index.html" style={{ textDecoration: 'none', color: 'inherit' }}>Mayela</a>
+          <a href="index.html" style={{ textDecoration: 'none', display: 'block' }}><img src="mayela-name.png" alt="Mayela" style={{ height: 42, width: 'auto', display: 'block' }} /></a>
         </div>
         <ul style={{ display: 'flex', gap: 40, listStyle: 'none', margin: 0, padding: 0 }}>
           <li><a href="index.html#home" style={{ color: 'var(--fg-meta)', fontSize: 17, textDecoration: 'none' }}>Home</a></li>
