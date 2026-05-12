@@ -172,7 +172,7 @@ function Hero() {
               }} />
 
               {/* plain outline placeholder for the index-card artwork */}
-              <div style={{
+              <div className="hero-top-layer" style={{
                 position: 'relative',
                 width: '100%',
                 aspectRatio: '16 / 9',
@@ -279,7 +279,7 @@ function Hero() {
               }} />
 
               {/* outline polaroid placeholder */}
-              <div style={{
+              <div className="hero-top-layer" style={{
                 position: 'relative',
                 background: '#fbf8f3',
                 padding: '16px 16px 56px',
@@ -369,12 +369,12 @@ function Hero() {
           90% { opacity: 1; } 
           100% { opacity: 0; } 
         }
-        .hero-scrap { transition: transform 0.4s ease; }
-        .hero-card-bundle:hover {
-          transform: rotate(-1.5deg) translateY(-6px) scale(1.01) !important;
+        .hero-top-layer { transition: transform 0.35s ease; }
+        .hero-card-bundle:hover .hero-top-layer {
+          transform: rotate(-1.5deg) translateY(-6px) scale(1.01);
         }
-        .hero-polaroid-bundle:hover {
-          transform: rotate(1.5deg) translateY(-8px) scale(1.015) !important;
+        .hero-polaroid-bundle:hover .hero-top-layer {
+          transform: rotate(1.5deg) translateY(-8px) scale(1.015);
         }
       `}</style>
     </section>
