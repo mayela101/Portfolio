@@ -133,11 +133,11 @@ function Hero() {
                       width: 'auto',
                       display: 'block',
                       marginRight: nudge,     /* ← per-letter spacing */
-                      /* steps(2,end) = 2 discrete jumps, true stop-motion */
-                      /* duration 0.7s → each frame holds for 0.35s       */
-                      /* stagger 0.75s > duration = fully sequential       */
-                      animation: `${anim} 0.7s steps(2, end) both`,
-                      animationDelay: `${0.1 + i * 0.75}s`,
+                      opacity: i === 0 ? undefined : 0, /* a–a invisible until fired */
+                      /* M: 'both' = shows at scattered pos during its delay  */
+                      /* a–a: 'forwards' = stays opacity:0 until animation starts */
+                      animation: `${anim} 0.7s steps(2, end) ${i === 0 ? 'both' : 'forwards'}`,
+                      animationDelay: `${0.1 + i * 0.55}s`,
                     }}
                   />
                 ))}
@@ -323,29 +323,29 @@ function Hero() {
         /* 3-frame stop-motion per letter: scattered → clustering → final */
         /* steps(2,end) = discrete jumps, no smooth interpolation        */
         @keyframes letterFromLeft {
-          0%   { transform: translate(-160px, -30px) rotate(-28deg); }
-          50%  { transform: translate(-65px,  -12px) rotate(-12deg); }
-          100% { transform: none; }
+          0%   { opacity: 1; transform: translate(-160px, -30px) rotate(-28deg); }
+          50%  { opacity: 1; transform: translate(-65px,  -12px) rotate(-12deg); }
+          100% { opacity: 1; transform: none; }
         }
         @keyframes letterFromTop {
-          0%   { transform: translate(60px, -110px) rotate(22deg); }
-          50%  { transform: translate(25px,  -45px) rotate(10deg); }
-          100% { transform: none; }
+          0%   { opacity: 1; transform: translate(60px, -110px) rotate(22deg); }
+          50%  { opacity: 1; transform: translate(25px,  -45px) rotate(10deg); }
+          100% { opacity: 1; transform: none; }
         }
         @keyframes letterFromRight {
-          0%   { transform: translate(180px,  35px) rotate(-20deg); }
-          50%  { transform: translate(75px,   14px) rotate(-9deg);  }
-          100% { transform: none; }
+          0%   { opacity: 1; transform: translate(180px,  35px) rotate(-20deg); }
+          50%  { opacity: 1; transform: translate(75px,   14px) rotate(-9deg);  }
+          100% { opacity: 1; transform: none; }
         }
         @keyframes letterFromBottom {
-          0%   { transform: translate(-50px, 100px) rotate(18deg); }
-          50%  { transform: translate(-20px,  42px) rotate(8deg);  }
-          100% { transform: none; }
+          0%   { opacity: 1; transform: translate(-50px, 100px) rotate(18deg); }
+          50%  { opacity: 1; transform: translate(-20px,  42px) rotate(8deg);  }
+          100% { opacity: 1; transform: none; }
         }
         @keyframes letterFromTopLeft {
-          0%   { transform: translate(-110px, -80px) rotate(-25deg); }
-          50%  { transform: translate(-46px,  -33px) rotate(-11deg); }
-          100% { transform: none; }
+          0%   { opacity: 1; transform: translate(-110px, -80px) rotate(-25deg); }
+          50%  { opacity: 1; transform: translate(-46px,  -33px) rotate(-11deg); }
+          100% { opacity: 1; transform: none; }
         }
         @keyframes slideOut {
           0% { 
