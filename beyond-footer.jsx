@@ -608,40 +608,6 @@ function BeyondWork() {
   );
 }
 
-function Footer() {
-  return (
-    <footer style={{ padding: '60px 0 50px', borderTop: 'none' }}>
-      <div className="container">
-        <div style={{
-          display: 'flex', gap: 40, paddingBottom: 24,
-          borderBottom: '1px solid var(--hairline)',
-        }}>
-          <a href="#home" style={{ color: 'var(--fg-meta)', fontSize: 16, fontWeight: 500 }}>Home</a>
-          <a href="#projects" style={{ color: 'var(--fg-meta)', fontSize: 16, fontWeight: 500 }}>Projects</a>
-        </div>
 
-        <h3 style={{
-          fontFamily: 'var(--font-serif)', fontStyle: 'italic',
-          fontSize: 26, fontWeight: 600, color: 'var(--fg-display)',
-          margin: '30px 0 14px',
-        }}>Contact Me</h3>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--fg-meta)', fontSize: 16, marginBottom: 22 }}>
-          <MailIcon size={16} />
-          <span>connect.mayela@gmail.com</span>
-        </div>
-
-        <div style={{ display: 'flex', gap: 14, marginBottom: 28 }}>
-          <a href="https://linkedin.com/in/mayelaa" className="social-btn" aria-label="LinkedIn"><LinkedInIcon /></a>
-          <a href="https://github.com/mayela101" className="social-btn" aria-label="GitHub"><GitHubIcon /></a>
-        </div>
-
-        <p style={{ fontSize: 14, color: 'var(--fg-label)', margin: 0 }}>
-          Made by Mayela &lt;3
-        </p>
-      </div>
-    </footer>
-  );
-}
-
-Object.assign(window, { BeyondWork, Footer });
+Object.assign(window, { Footer });

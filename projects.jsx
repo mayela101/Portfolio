@@ -43,7 +43,7 @@ const PROJECTS = [
     section: 'work',
   },
   {
-    id: 'crypto', tag: 'Mobile App Development', tag2: 'In Progress',
+    id: 'cryptobot', tag: 'Mobile App Development', tag2: 'In Progress',
     title: 'Algorithmic Cryptocurrency Trading App', product: 'CryptoBot',
     desc: "A full-stack algorithmic cryptocurrency trading platform with a mobile app and AI-powered assistant that helps users monitor markets, test strategies, and automate trades with confidence.",
     hue: '#6085B3', hueStrong: '#36588a', img: 'assets/crypto-cover.jpg',
@@ -253,7 +253,7 @@ function ProjectsSection() {
     // Section spacing in the full page flow.
     // Top value = space above projects section.
     // Bottom value = space below projects section.
-    <section id="projects" style={{ padding: '30px 0 60px' }}>
+    <section id="projects" style={{ padding: '20px 0 60px' }}>
       <div className="container">
         {sectionHeading('My Work')}
         <div className="projects-grid-two">

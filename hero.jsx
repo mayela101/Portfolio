@@ -77,7 +77,7 @@ function Hero() {
   };
 
   return (
-    <section id="home" style={{ padding: '80px 0 100px', position: 'relative', overflow: 'hidden' }}>
+    <section id="home" style={{ padding: '130px 0 70px', position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ position: 'relative' }}>
         <div style={{
           display: 'grid',
@@ -274,7 +274,7 @@ function Hero() {
                   color: 'var(--scrap-navy)',
                   marginTop: 10,
                 }}>
-                  mayela ✦
+                  ✦✦✦
                 </div>
               </div>
             </div>
