@@ -37,8 +37,9 @@ function Footer() {
           display: 'flex', gap: 40, paddingBottom: 24,
           borderBottom: '1px solid var(--hairline)',
         }}>
-          <a href="#home" style={{ color: 'var(--fg-meta)', fontSize: 16, fontWeight: 500 }}>Home</a>
-          <a href="#projects" style={{ color: 'var(--fg-meta)', fontSize: 16, fontWeight: 500 }}>Projects</a>
+          <a href="#home" style={{ color: 'var(--fg-meta)', fontSize: 17, textDecoration: 'none' }}>Home</a>
+          <a href="#projects" style={{ color: 'var(--fg-meta)', fontSize: 17, textDecoration: 'none' }}>Projects</a>
+          <a href="#experience" style={{ color: 'var(--fg-meta)', fontSize: 17, textDecoration: 'none' }}>Experience</a>
         </div>
 
 

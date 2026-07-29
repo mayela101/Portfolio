@@ -2,14 +2,24 @@
 
 const EXPERIENCES = [
   {
-    org: 'Ingram Micro',
-    role: 'Data Reliability Engineer Intern',
-    dates: 'Jun. 2025 - Aug. 2025',
+    // First experience
+    org: '10a Labs',
+    role: 'Cyber Triage Analyst',
+    dates: 'Jun. 2026 - Present',
     points: [
-      'Maintained and optimized large-scale GCP data pipelines (BigQuery, Pub/Sub, Dataflow, DeltaSync, VM Clusters) integrating AlloyDB and Oracle legacy systems, sustaining 99.9% uptime across 10M+ daily transactions.',
-      'Automated infrastructure deployments and environment provisioning using Terraform, reducing deployment time by 60% and improving scalability of containerized Kubernetes services within existing CI/CD pipelines.',
-      'Debugged distributed pipeline failures end-to-end, writing Python automation scripts and SQL validation queries in DBeaver, improving pipeline reliability and reducing manual intervention.',
-      'Documented pipeline architecture and failure patterns to support team knowledge transfer, making complex infrastructure behavior accessible to both technical and non-technical stakeholders.',
+      'Reviewing and triaging inputs and AI-generated outputs focused on cyber-related content for frontier AI labs and Fortune 10 clients, ensuring accuracy across high-volume review cycles.',
+      'Assessing inputs and outputs against a structured evaluation framework, applying structured judgment to identify edge cases, anomalies, and potential risks in AI-generated content.',
+    ],
+
+
+  },
+    {
+    org: 'CALSys Lab',
+    role: 'Research Assistant',
+    dates: 'Jan. 2025 - Jun. 2026',
+    points: [
+      'Building and maintaining Python data pipelines processing 200K+ darkweb marketplace records, integrating APIs and web scraping frameworks for large-scale cybersecurity research.',
+      'Applying ML techniques (TF-IDF, spherical K-Means) to analyze vendor behavior patterns; improved community detection accuracy by 15%. Co-authoring ongoing publication with PhD researchers.',
     ],
   },
   {
@@ -22,12 +32,14 @@ const EXPERIENCES = [
     ],
   },
   {
-    org: 'CALSys Lab',
-    role: 'Research Assistant',
-    dates: 'Jan. 2025 - Present',
+    org: 'Ingram Micro',
+    role: 'Data Reliability Engineer Intern',
+    dates: 'Jun. 2025 - Aug. 2025',
     points: [
-      'Building and maintaining Python data pipelines processing 200K+ darkweb marketplace records, integrating APIs and web scraping frameworks for large-scale cybersecurity research.',
-      'Applying ML techniques (TF-IDF, spherical K-Means) to analyze vendor behavior patterns; improved community detection accuracy by 15%. Co-authoring ongoing publication with PhD researchers.',
+      'Maintained and optimized large-scale GCP data pipelines (BigQuery, Pub/Sub, Dataflow, DeltaSync, VM Clusters) integrating AlloyDB and Oracle legacy systems, sustaining 99.9% uptime across 10M+ daily transactions.',
+      'Automated infrastructure deployments and environment provisioning using Terraform, reducing deployment time by 60% and improving scalability of containerized Kubernetes services within existing CI/CD pipelines.',
+      'Debugged distributed pipeline failures end-to-end, writing Python automation scripts and SQL validation queries in DBeaver, improving pipeline reliability and reducing manual intervention.',
+      'Documented pipeline architecture and failure patterns to support team knowledge transfer, making complex infrastructure behavior accessible to both technical and non-technical stakeholders.',
     ],
   },
 ];
