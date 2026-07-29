@@ -1,0 +1,204 @@
+/* =================================================================
+   Mayela Portfolio — Colors & Type Foundations
+   Extracted from the Portfolio codebase (styles.css, case study CSS)
+   ================================================================= */
+
+:root {
+  /* ---------- Neutrals / Surface ---------- */
+  --cream-bg:       #f5f0ed;           /* page background, warm off-white */
+  --cream-bg-95:    rgba(245, 240, 237, 0.95); /* nav / hero overlay */
+  --surface:        #ffffff;
+  --surface-muted:  #fafafa;
+  --hairline:       #e0e0e0;           /* 1px borders + dividers */
+
+  /* ---------- Foreground / Text ---------- */
+  --fg-display:     #1a1a1a;           /* h1, h2, hero title */
+  --fg-body:        #333333;           /* body default */
+  --fg-secondary:   #555555;           /* long-form paragraphs */
+  --fg-meta:        #666666;           /* nav links, meta */
+  --fg-label:       #999999;           /* uppercase eyebrows, credits */
+
+  /* ---------- Brand Accent (earthy brown) ---------- */
+  --accent:         #69402b;           /* primary hover fill, bullet accent */
+  --accent-hover:   #754c38;           /* border on hover */
+  --accent-shadow:  rgba(138, 69, 48, 0.3);
+
+  /* ---------- Project Accent Palette ---------- */
+  /* Each case study has its own radial-gradient accent */
+  --project-pink:   #FFB6C1;           /* Bloom */
+  --project-blue:   #6085B3;           /* CryptoBot */
+  --project-purple: #ba81f7;           /* Bytes */
+  --project-orange: #fab366;           /* Avian */
+  --project-sky:    #7BA2ED;           /* Brand Guardian */
+  --project-amber:  #f2a03d;           /* Avian bullet */
+
+  /* ---------- Semantic ---------- */
+  --selection-bg:   rgba(230, 200, 255, 0.3);
+  --heart:          #ff6b6b;
+
+  /* ---------- Shadow System ---------- */
+  --shadow-card:     0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-card-h:   0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-image:    0 10px 40px rgba(0, 0, 0, 0.1);
+  --shadow-profile:  0 10px 40px rgba(0, 0, 0, 0.15);
+  --shadow-profile-h:0 15px 50px rgba(0, 0, 0, 0.2);
+  --shadow-mockup:   drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+  --shadow-social-h: 0 4px 12px rgba(255, 182, 193, 0.3);
+
+  /* ---------- Radii ---------- */
+  --radius-pill:   25px;   /* tags, nav pill buttons */
+  --radius-card:   25px;   /* project cards */
+  --radius-image:  15px;   /* showcase images, mockup containers */
+  --radius-img-sm: 10px;   /* inline images */
+  --radius-round:  50%;    /* avatars, social buttons */
+
+  /* ---------- Spacing ---------- */
+  --space-1:  8px;
+  --space-2:  15px;
+  --space-3:  20px;
+  --space-4:  30px;
+  --space-5:  40px;
+  --space-6:  60px;
+  --space-7:  80px;
+  --space-8:  120px;
+  --gutter:   40px;        /* .container horizontal */
+  --max-w:    1200px;      /* content max width */
+
+  /* ---------- Type Stack ---------- */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+               'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-display: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* ---------- Type Scale (px, as used in codebase) ---------- */
+  --fs-hero:       56px;   /* hero-title-animated */
+  --fs-display:    48px;   /* project-hero-title */
+  --fs-h1:         32px;   /* project-title, content-section h2 */
+  --fs-h2:         24px;   /* contact-heading */
+  --fs-h3:         20px;   /* content-section h4 / logo */
+  --fs-body:       18px;   /* hero-description, long-form copy */
+  --fs-ui:         16px;   /* project-description, footer */
+  --fs-meta:       15px;   /* screenshot caption, pill link */
+  --fs-small:      14px;   /* project-tag, label, credit */
+
+  --lh-tight:  1.2;
+  --lh-snug:   1.6;
+  --lh-relaxed:1.7;
+  --lh-loose:  1.8;        /* default for body paragraphs */
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+
+  /* ---------- Motion ---------- */
+  --ease:         ease;
+  --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:     0.3s;
+  --dur-normal:   0.6s;
+  --hover-lift:   translateY(-5px);
+  --hover-lift-sm:translateY(-2px);
+  --hover-lift-3: translateY(-3px);
+}
+
+/* =================================================================
+   Semantic element styles — apply directly to raw HTML
+   ================================================================= */
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream-bg);
+  color: var(--fg-body);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-semibold);
+  color: var(--fg-display);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-3);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-semibold);
+  color: var(--fg-display);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-3);
+}
+
+h3 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  color: var(--fg-display);
+  margin: 0 0 var(--space-3);
+}
+
+h4 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--fg-display);
+  margin: 0 0 var(--space-2);
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-loose);
+  color: var(--fg-secondary);
+  max-width: 800px;
+  margin: 0 0 var(--space-3);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.eyebrow {
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--fg-label);
+}
+
+.pill {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1.5px solid var(--fg-body);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-small);
+  color: var(--fg-body);
+  background: transparent;
+}
+
+.arrow-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.arrow-list li {
+  font-size: var(--fs-body);
+  line-height: var(--lh-loose);
+  color: var(--fg-secondary);
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: var(--space-2);
+}
+.arrow-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--fg-display);
+}

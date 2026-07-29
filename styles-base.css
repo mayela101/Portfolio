@@ -1,0 +1,234 @@
+/* =================================================================
+   Base tokens + semantic styles — lifted from Mayela's existing system
+   (cream surface, brown accent, project hues, spacing ramp, motion)
+   and extended with scrapbook additions (navy, mustard, burgundy).
+   ================================================================= */
+
+:root {
+  /* ---------- Existing Mayela system ---------- */
+  --cream-bg:       #f5f0ed;
+  --cream-bg-95:    rgba(245, 240, 237, 0.95);
+  --surface:        #ffffff;
+  --surface-muted:  #fafafa;
+  --hairline:       #e0e0e0;
+
+  --fg-display:     #1a1a1a;
+  --fg-body:        #333333;
+  --fg-secondary:   #555555;
+  --fg-meta:        #666666;
+  --fg-label:       #999999;
+
+  --accent:         #69402b;
+  --accent-hover:   #754c38;
+  --accent-shadow:  rgba(138, 69, 48, 0.3);
+
+  /* project hues */
+  --project-pink:   #FFB6C1;
+  --project-blue:   #6085B3;
+  --project-purple: #ba81f7;
+  --project-orange: #fab366;
+  --project-sky:    #7BA2ED;
+  --project-amber:  #f2a03d;
+
+  /* ---------- Scrapbook additions ---------- */
+  --scrap-navy:     #2d3f5e;   /* matches polaroid frame */
+  --scrap-mustard:  #d4a93e;   /* matches gold stars */
+  --scrap-burgundy: #8a3a3a;
+  --scrap-paper:    #efe8d8;   /* warmer index-card cream */
+  --scrap-tape-blue:#8aa6c8;
+  --scrap-tape-navy:#3d5278;
+
+  --selection-bg:   rgba(230, 200, 255, 0.3);
+
+  /* ---------- Shadows ---------- */
+  --shadow-card:     0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-card-h:   0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-scrap:    0 6px 18px rgba(42, 40, 50, 0.18);
+  --shadow-scrap-lg: 0 14px 40px rgba(42, 40, 50, 0.22);
+  --shadow-image:    0 10px 40px rgba(0, 0, 0, 0.1);
+
+  /* ---------- Radii ---------- */
+  --radius-pill:   25px;
+  --radius-card:   25px;
+  --radius-image:  15px;
+  --radius-round:  50%;
+
+  /* ---------- Spacing ---------- */
+  --space-1:  8px;
+  --space-2:  15px;
+  --space-3:  20px;
+  --space-4:  30px;
+  --space-5:  40px;
+  --space-6:  60px;
+  --space-7:  80px;
+  --space-8:  120px;
+  --gutter:   40px;
+  --max-w:    1200px;
+
+  /* ---------- Type ---------- */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+               'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-serif: 'Playfair Display', 'Times New Roman', Georgia, serif;
+  --font-hand: 'Caveat', 'Bradley Hand', cursive;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --fs-hero:    64px;
+  --fs-display: 48px;
+  --fs-h1:      32px;
+  --fs-h2:      24px;
+  --fs-h3:      20px;
+  --fs-body:    18px;
+  --fs-ui:      16px;
+  --fs-meta:    15px;
+  --fs-small:   14px;
+
+  --lh-tight:   1.15;
+  --lh-snug:    1.5;
+  --lh-loose:   1.8;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+
+  --ease:       ease;
+  --dur-fast:   0.3s;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+nav { border: none; outline: none; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream-bg);
+  color: var(--fg-body);
+  line-height: var(--lh-snug);
+  margin: 0;
+  /* subtle paper grain */
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(212, 169, 62, 0.025), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(45, 63, 94, 0.02), transparent 40%);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+a { color: inherit; text-decoration: none; transition: color var(--dur-fast) var(--ease); }
+
+::selection { background-color: var(--selection-bg); color: var(--fg-display); }
+
+/* Display headings use the serif */
+.serif, h1.serif, h2.serif { font-family: var(--font-serif); }
+
+/* Arrow bullets from existing system */
+.arrow-list { list-style: none; padding: 0; margin: 0; }
+.arrow-list li {
+  font-size: var(--fs-body);
+  line-height: var(--lh-loose);
+  color: var(--fg-secondary);
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: var(--space-1);
+}
+.arrow-list li::before {
+  content: "→";
+  position: absolute; left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* ---------- Scrapbook primitives ---------- */
+
+/* washi tape strip — CSS drawn, used where we want to tape something down */
+.tape {
+  position: absolute;
+  height: 28px;
+  background: var(--scrap-tape-blue);
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,0.14) 0 8px,
+      transparent 8px 16px),
+    repeating-linear-gradient(0deg,
+      rgba(45,63,94,0.18) 0 1px,
+      transparent 1px 4px);
+  opacity: 0.85;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  pointer-events: none;
+}
+.tape.mustard {
+  background-color: var(--scrap-mustard);
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,0.18) 0 8px,
+      transparent 8px 16px);
+}
+.tape.navy {
+  background-color: var(--scrap-tape-navy);
+}
+.tape.red {
+  background-color: #a94a3d;
+}
+
+/* pin — used to pin things to a corkboard */
+.pin {
+  position: absolute;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff8a7a 0%, #c0392b 60%, #7a1f14 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25), inset -1px -1px 2px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+.pin.navy { background: radial-gradient(circle at 35% 30%, #6a86b8 0%, #2d3f5e 60%, #171f30 100%); }
+.pin.mustard { background: radial-gradient(circle at 35% 30%, #f2cf6f 0%, #b88d1e 60%, #5f470a 100%); }
+
+/* Polaroid frame — CSS version when we're not using the PNG */
+.polaroid {
+  background: #fbf8f3;
+  padding: 12px 12px 44px;
+  box-shadow: var(--shadow-scrap);
+  display: inline-block;
+}
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #d0d0d0;
+}
+.polaroid .caption {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: #2a2a2a;
+  text-align: center;
+  padding-top: 8px;
+}
+
+/* Shared social icon buttons */
+.social-btn,
+.social-btn:link,
+.social-btn:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--fg-body);
+  color: var(--fg-body);
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover,
+.social-btn:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent-hover);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px var(--accent-shadow);
+}
