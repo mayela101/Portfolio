@@ -1,31 +1,38 @@
 .stage {
-  /* Key unit and gap. The keyboard is 15 units + 14 gaps wide, plus padding. */
+  /* Key unit and gap. The keyboard is 15 units + 14 gaps wide, plus case and plate. */
   --u: 36px;
-  --gap: 5px;
-  --pad: 16px;
-  --depth: 4px;
+  --gap: 6px;
+  --case-pad: 12px;
+  --plate-pad: 10px;
+  --inset: calc(var(--case-pad) + var(--plate-pad));
+  --depth: 6px; /* visible keycap side wall = key travel */
+  --wall: #c9bcb1;
+  --wall-shade: #b3a69b;
   perspective: 1400px;
 }
 
 @media (max-width: 720px) {
   .stage {
     --gap: 3px;
-    --pad: 10px;
-    --depth: 3px;
-    --u: min(36px, calc((100vw - 2 * var(--gutter) - 2 * var(--pad) - 14 * var(--gap)) / 15));
+    --case-pad: 7px;
+    --plate-pad: 5px;
+    --depth: 4px;
+    --u: min(36px, calc((100vw - 2 * var(--gutter) - 2 * var(--inset) - 14 * var(--gap)) / 15));
   }
 }
 
-.board {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
+/* Outer shell, with a visible edge thickness. */
+.case {
   width: max-content;
   margin-inline: auto;
-  padding: var(--pad);
-  background: var(--kb-base);
-  border-radius: 18px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  padding: var(--case-pad);
+  background: linear-gradient(180deg, #e6ddd5, #d6cbc2);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.06),
+    0 8px 0 #b8ab9f,
+    0 40px 60px rgba(0, 0, 0, 0.16);
   transform-origin: 50% 60%;
   transition: transform 0.6s ease;
 }
@@ -34,42 +41,109 @@
   transform: rotateX(32deg) rotateZ(-4deg);
 }
 
+/* The recessed plate the switches sit in. */
+.plate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--plate-pad);
+  background: #bdb0a6;
+  border-radius: 12px;
+  box-shadow:
+    inset 0 3px 8px rgba(0, 0, 0, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.35);
+}
+
 .row {
   display: flex;
   gap: var(--gap);
 }
 
 .key {
+  position: relative;
   flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: calc(var(--u) * var(--w) + var(--gap) * (var(--w) - 1));
   height: var(--u);
-  border-radius: 7px;
-  background: var(--key);
-  color: var(--muted);
-  font: 500 calc(var(--u) * 0.36) var(--font-mono);
-  box-shadow:
-    0 var(--depth) 0 var(--key-edge),
-    0 calc(var(--depth) + 4px) 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.07s ease;
   user-select: none;
 }
 
-.named {
+/* Dark switch well under the cap; it shows as the cap travels down. */
+.key::before {
+  content: '';
+  position: absolute;
+  inset: 3px 1px 0;
+  border-radius: 8px;
+  background: #8f8279;
+}
+
+/* Keycap: the side wall is drawn by the shadow, so pressing shortens it. */
+.cap {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #efe7e0, #e2d7ce);
+  box-shadow:
+    0 var(--depth) 0 var(--wall),
+    0 calc(var(--depth) + 1px) 0 var(--wall-shade),
+    0 calc(var(--depth) + 5px) 8px rgba(0, 0, 0, 0.28);
+  /* Release: springs back with a small overshoot. */
+  transition:
+    transform 0.16s cubic-bezier(0.3, 1.7, 0.5, 1),
+    box-shadow 0.16s cubic-bezier(0.3, 1.7, 0.5, 1);
+}
+
+/* Slightly smaller, dished top face, like a tapered cap. */
+.face {
+  position: absolute;
+  inset: 3px 4px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: radial-gradient(ellipse at 50% 35%, #fffdfb 0%, #f6efe9 70%, #ece2da 100%);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 -2px 3px rgba(0, 0, 0, 0.07);
+  color: var(--muted);
+  font: 500 calc(var(--u) * 0.36) var(--font-mono);
+  transition: background 0.16s ease, color 0.16s ease;
+}
+
+.named .face {
   font-size: calc(var(--u) * 0.26);
 }
 
-.down {
-  background: var(--accent);
-  color: var(--bg);
+/* Press: snaps down fast and bottoms out on the plate. */
+.down .cap {
   transform: translateY(calc(var(--depth) - 1px));
-  box-shadow: 0 1px 0 var(--accent-deep);
+  box-shadow:
+    0 1px 0 var(--wall),
+    0 2px 0 var(--wall-shade),
+    0 3px 4px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.04s;
+  transition-timing-function: ease-out;
+}
+
+.down .face {
+  background: radial-gradient(ellipse at 50% 35%, #8a5a41 0%, var(--accent) 75%);
+  color: var(--bg);
+  transition-duration: 0.04s;
 }
 
 @media (max-width: 720px) {
-  .key {
+  .key::before,
+  .cap {
     border-radius: 5px;
+  }
+  .face {
+    inset: 2px 3px 5px;
+    border-radius: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cap,
+  .face {
+    transition: none !important;
   }
 }

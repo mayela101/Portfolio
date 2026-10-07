@@ -11,7 +11,7 @@ export const experience: Experience[] = [
     date: 'Jun 2026 — now',
     org: '10a Labs',
     role: 'Cyber Triage Analyst',
-    tag: 'Contract · embedded at a frontier AI lab',
+    tag: 'Contract · Embedded',
     bullets: [
       'Investigate high-signal cyber abuse cases surfaced daily by detection systems: jailbreaks, classifier failures, and malware or offensive-cyber misuse.',
       'Reproduce attacks through adversarial probing to separate genuine model-security failures from false positives and overstated claims.',

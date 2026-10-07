@@ -24,7 +24,7 @@ export default function Hero({ tick, caretOn, reducedMotion }: HeroProps) {
         <div className={styles.prompt} aria-hidden="true">
           &gt; whoami
         </div>
-        <h1 className={styles.title}>Hi, I'm {site.name} —</h1>
+        <h1 className={styles.title}>Hi, I'm {site.name}!</h1>
         <p className={styles.typed}>
           <span className="visually-hidden">{site.heroPhrases.join(' ')}</span>
           <span aria-hidden="true">

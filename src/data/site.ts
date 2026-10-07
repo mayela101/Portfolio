@@ -3,7 +3,7 @@
 export const site = {
   handle: 'mayela',
   name: 'Mayela',
-  currently: 'currently: cyber triage @ a frontier ai lab',
+  currently: 'currently:  embedded cyber triage @ 10a Labs',
   intro:
     "I break AI models on purpose. I'm on an embedded contract at a frontier AI lab, where I triage cyber abuse, reproduce jailbreaks, and turn what I find into model-safety fixes.",
   /** Lines the hero keyboard types out, in order, on a loop. */
