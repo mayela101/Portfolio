@@ -1,0 +1,151 @@
+.section {
+  padding: 0 var(--gutter) var(--section-gap);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1.5px solid var(--ink);
+}
+
+.item {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+/* Shared column template for the row and its details. */
+.row,
+.bullets {
+  display: grid;
+  grid-template-columns: 48px 200px minmax(0, 1fr) auto 28px;
+  column-gap: 20px;
+}
+
+.row {
+  grid-template-areas: 'n date role tag arrow';
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.n,
+.date {
+  font: 14px var(--font-mono);
+}
+
+.n {
+  grid-area: n;
+  color: var(--faint);
+}
+
+.date {
+  grid-area: date;
+  color: var(--soft);
+}
+
+.role {
+  grid-area: role;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.org {
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.tag {
+  grid-area: tag;
+}
+
+.arrow {
+  grid-area: arrow;
+  font-size: 20px;
+  color: var(--accent);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.arrowOpen {
+  transform: rotate(90deg);
+}
+
+.bullets {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  row-gap: 10px;
+}
+
+.bullets[hidden] {
+  display: none;
+}
+
+.bullets li {
+  grid-column: 3 / span 1;
+  position: relative;
+  max-width: 760px;
+  padding-left: 24px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .row,
+  .bullets {
+    grid-template-columns: 32px minmax(0, 1fr) 24px;
+    column-gap: 12px;
+  }
+  .row {
+    grid-template-areas:
+      'n date arrow'
+      '. role role'
+      '. tag tag';
+    row-gap: 10px;
+  }
+  .role {
+    font-size: 20px;
+  }
+  .tag {
+    justify-self: start;
+  }
+  .bullets li {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .item {
+    padding: 22px 0;
+  }
+  .row,
+  .bullets {
+    grid-template-columns: 0 minmax(0, 1fr) 24px;
+    column-gap: 0;
+  }
+  .n {
+    display: none;
+  }
+  .role {
+    font-size: 18px;
+  }
+  .bullets li {
+    font-size: 15px;
+  }
+}
