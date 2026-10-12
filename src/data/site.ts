@@ -25,7 +25,7 @@ export const site = {
 export const settings = {
   /** Milliseconds per animation tick. Design presets: Calm 140, Normal 95, Fast 60. */
   tickMs: 95,
-  /** Tilt the hero keyboard in 3D. */
+  /** Angle the hero keyboard back in 3D so it points toward the viewer. */
   tiltKeyboard: true,
   /** Ticks a user-pressed key stays visibly pressed. */
   liveKeyTicks: 3,

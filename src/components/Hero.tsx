@@ -1,5 +1,6 @@
 import { settings, site } from '../data/site';
 import { useTypingKeyboard } from '../hooks/useTypingKeyboard';
+import Hologram from './Hologram';
 import Keyboard from './Keyboard';
 import { PillLink } from './ui';
 import styles from './Hero.module.css';
@@ -25,13 +26,6 @@ export default function Hero({ tick, caretOn, reducedMotion }: HeroProps) {
           &gt; whoami
         </div>
         <h1 className={styles.title}>Hi, I'm {site.name}!</h1>
-        <p className={styles.typed}>
-          <span className="visually-hidden">{site.heroPhrases.join(' ')}</span>
-          <span aria-hidden="true">
-            {text}
-            <span className={styles.caret} style={caretStyle} />
-          </span>
-        </p>
         <p className={styles.intro}>{site.intro}</p>
         <div className={styles.actions}>
           <PillLink href="#experience" variant="solid">
@@ -45,10 +39,11 @@ export default function Hero({ tick, caretOn, reducedMotion }: HeroProps) {
       </div>
 
       <figure className={styles.figure}>
+        <Hologram text={text} caretOn={caretOn} lastKey={lastKey} srText={site.heroPhrases.join(' ')} />
         <Keyboard pressed={pressed} tilt={settings.tiltKeyboard} />
         <figcaption className={styles.caption} aria-hidden="true">
           <span>fig.01: input device</span>
-          <span>keydown → {lastKey ?? 'idle'}</span>
+          <span>projection: active</span>
         </figcaption>
       </figure>
     </header>

@@ -1,11 +1,10 @@
 import { site } from '../data/site';
-import { Keycap } from './ui';
 import styles from './Nav.module.css';
 
 const LINKS = [
-  { key: '1', label: 'experience', href: '#experience' },
-  { key: '2', label: 'projects', href: '#projects' },
-  { key: '3', label: 'contact', href: '#contact' },
+  { label: 'experience', href: '#experience' },
+  { label: 'projects', href: '#projects' },
+  { label: 'contact', href: '#contact' },
 ];
 
 export default function Nav() {
@@ -19,7 +18,6 @@ export default function Nav() {
         {LINKS.map((l) => (
           <li key={l.href}>
             <a href={l.href} className={styles.link}>
-              <Keycap>{l.key}</Keycap>
               {l.label}
             </a>
           </li>

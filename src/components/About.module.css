@@ -1,28 +1,28 @@
 .section {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 56px;
+  gap: 3.5rem;
   padding: 0 var(--gutter) var(--section-gap);
 }
 
 .env {
   margin: 0;
-  border-top: 1.5px solid var(--ink);
-  font-size: 16px;
+  border-top: 0.0938rem solid var(--ink);
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--text);
 }
 
 .envRow {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 20px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: 9.375rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid var(--line);
 }
 
 .envKey {
-  font: 13px/1.9 var(--font-mono);
+  font: 0.8125rem/1.9 var(--font-mono);
   color: var(--faint);
 }
 
@@ -31,13 +31,13 @@
 }
 
 .degree {
-  padding: 20px 0;
-  border-top: 1.5px solid var(--ink);
-  border-bottom: 1px solid var(--line);
+  padding: 1.25rem 0;
+  border-top: 0.0938rem solid var(--ink);
+  border-bottom: 0.0625rem solid var(--line);
 }
 
 .degreeTitle {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--ink);
 }
@@ -49,17 +49,17 @@
 
 .detail,
 .languages {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--muted);
 }
 
 .detail {
-  margin-top: 6px;
+  margin-top: 0.375rem;
 }
 
 .languages {
-  padding: 16px 0;
+  padding: 1rem 0;
 }
 
 @media (max-width: 900px) {
@@ -72,6 +72,6 @@
 @media (max-width: 560px) {
   .envRow {
     grid-template-columns: minmax(0, 1fr);
-    gap: 4px;
+    gap: 0.25rem;
   }
 }

@@ -27,12 +27,3 @@ export function SectionHeader({ id, title, command }: { id?: string; title: stri
     </div>
   );
 }
-
-/** Tiny keycap glyph used in the nav. */
-export function Keycap({ children }: { children: ReactNode }) {
-  return (
-    <span className={styles.keycap} aria-hidden="true">
-      {children}
-    </span>
-  );
-}

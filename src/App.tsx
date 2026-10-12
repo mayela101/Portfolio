@@ -1,5 +1,6 @@
 import { settings } from './data/site';
 import { useTicker } from './hooks/useTicker';
+import { useCursorGlow } from './hooks/useCursorGlow';
 import { usePrefersReducedMotion } from './hooks/usePrefersReducedMotion';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
@@ -10,6 +11,7 @@ import Footer from './components/Footer';
 import styles from './App.module.css';
 
 export default function App() {
+  useCursorGlow();
   const tick = useTicker(settings.tickMs);
   const reducedMotion = usePrefersReducedMotion();
   const caretOn = reducedMotion || Math.floor(tick / 5) % 2 === 0;

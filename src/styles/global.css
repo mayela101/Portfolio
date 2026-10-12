@@ -1,44 +1,41 @@
 :root {
-  /* Palette */
-  --bg: #f5f0ed;
-  --ink: #1a1a1a;
-  --text: #333;
-  --muted: #555;
-  --soft: #666;
-  --faint: #999;
-  --line: #e0e0e0;
-  --accent: #69402b;
-  --accent-border: #754c38;
-  --accent-deep: #4a2c1d;
-
-  /* Keyboard */
-  --kb-base: #e9e1db;
-  --key: #fbf8f5;
-  --key-edge: #d8cdc5;
+  /* Palette: dark navy with electric-blue accents */
+  --bg: #05080f;
+  --ink: #eaf3ff;
+  --text: #c9d6ec;
+  --muted: #a9b9d4;
+  --soft: #8ea0c0;
+  --faint: #7487a8;
+  --line: rgba(61, 169, 255, 0.2);
+  --accent: #3da9ff;
+  --accent-border: #6dbcff;
+  --accent-deep: #1d6fc4;
+  --accent-glow: rgba(61, 169, 255, 0.45);
+  --green: #4dffb0; /* matches the "online" LED on the hologram */
 
   /* Type */
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
 
   /* Layout */
-  --page-max: 1280px;
-  --gutter: 56px;
-  --section-gap: 100px;
+  --page-max: none;
+  --gutter: clamp(3.5rem, 4.375vw, 8rem);
+  --section-gap: 6.25rem;
 
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 @media (max-width: 900px) {
   :root {
-    --gutter: 32px;
-    --section-gap: 80px;
+    --gutter: 2rem;
+    --section-gap: 5rem;
   }
 }
 
 @media (max-width: 560px) {
   :root {
-    --gutter: 16px;
-    --section-gap: 64px;
+    --gutter: 1rem;
+    --section-gap: 4rem;
   }
 }
 
@@ -59,6 +56,39 @@ body {
   color: var(--text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Faint blueprint grid and a glow behind the hero. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 45% at 75% 0%, rgba(40, 120, 255, 0.2), transparent 70%),
+    linear-gradient(rgba(61, 169, 255, 0.05) 0.0625rem, transparent 0.0625rem) 0 0 / 3rem 3rem,
+    linear-gradient(90deg, rgba(61, 169, 255, 0.05) 0.0625rem, transparent 0.0625rem) 0 0 / 3rem 3rem;
+  -webkit-mask-image: linear-gradient(#000 40%, transparent 100%);
+  mask-image: linear-gradient(#000 40%, transparent 100%);
+}
+
+/* The same grid, brighter, revealed only around the cursor (see useCursorGlow). */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 10rem at var(--mx, -62.4375rem) var(--my, -62.4375rem), rgba(77, 255, 176, 0.1), transparent),
+    linear-gradient(rgba(77, 255, 176, 0.45) 0.0625rem, transparent 0.0625rem) 0 0 / 3rem 3rem,
+    linear-gradient(90deg, rgba(77, 255, 176, 0.45) 0.0625rem, transparent 0.0625rem) 0 0 / 3rem 3rem;
+  -webkit-mask-image: radial-gradient(circle 13.75rem at var(--mx, -62.4375rem) var(--my, -62.4375rem), #000, transparent);
+  mask-image: radial-gradient(circle 13.75rem at var(--mx, -62.4375rem) var(--my, -62.4375rem), #000, transparent);
+  filter: blur(0.7px); /* slight softness so the lit lines glow rather than cut */
+  opacity: var(--glow, 0);
+  transition: opacity 0.4s ease;
 }
 
 h1,
@@ -86,12 +116,12 @@ button {
 }
 
 ::selection {
-  background: rgba(230, 200, 255, 0.3);
+  background: rgba(61, 169, 255, 0.35);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  outline: 0.125rem solid var(--accent);
+  outline-offset: 0.1875rem;
 }
 
 .mono {
@@ -100,9 +130,9 @@ button {
 
 .visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  margin: -0.0625rem;
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
